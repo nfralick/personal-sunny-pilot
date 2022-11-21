@@ -193,7 +193,7 @@ class TorqueEstimator:
   def is_sane(self, latAccelFactor, latAccelOffset, friction):
     if any([val is None or np.isnan(val) for val in [latAccelFactor, latAccelOffset, friction]]):
       return False
-    return (0.2 >= friction >= 0) and (3.5 >= latAccelFactor >= 1)
+    return (0.25 >= friction >= 0) and (4 >= latAccelFactor >= 1)
 
   def handle_log(self, t, which, msg):
     if which == "carControl":
